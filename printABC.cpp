@@ -13,11 +13,10 @@ void myprint(char ch) {
     int nums = 10;
 
     for (int i = 0; i < nums; ++i) {
-        std::unique_lock<std::mutex> ulk(mtx);
-
+        std::unique_lock<std::mutex> ulk(mtx);  //使用unique_lock，相当于注释掉的lock和unlock
+        //mtx.lock();
         cout << this_thread::get_id() << " : "<< ch << endl;
-
-        //cvar.notify_one();
+        //mtx.unlock();
     }
 }
 
