@@ -22,7 +22,7 @@ void data_preparation_thread() {
 //data处理线程
 void data_processing_thread() {
     while (true) {
-        std::unique_lock<std::mutex> lk(mut);   //对互斥量上锁
+        std::unique_lock<std::mutex> lk(mut);   //对互斥量上锁,保护条件变量
 
         /* wait传入一个互斥量和检查条件
          * wait检查这些条件，如果条件不满足（为false）
